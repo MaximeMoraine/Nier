@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Actor
+comment0.text=\r\n\ Impl\u00E8mente\ l'interface\ IActor.\r\n
+comment1.params=pos\ mov\ hp
+comment1.target=Actor(Nier.Deplacement.ICoord,\ Nier.Deplacement.IMovement,\ int)
+comment2.params=
+comment2.target=int\ getMaxLife()
+comment3.params=
+comment3.target=int\ getLife()
+comment4.params=
+comment4.target=Nier.Deplacement.ICoord\ getPosition()
+comment5.params=
+comment5.target=Nier.Deplacement.IMovement\ getMovement()
+comment6.params=
+comment6.target=boolean\ isAlive()
+comment7.params=l
+comment7.target=void\ setLife(int)
+comment7.text=\r\n\ @pre\r\n\ \ \ \ \ \ l\ >\=\ 0\r\n\ @post\r\n\ \ \ \ \ \ getLife()\ \=\=\ l\r\n
+comment8.params=m
+comment8.target=void\ setMovement(Nier.Deplacement.IMovement)
+numComments=9

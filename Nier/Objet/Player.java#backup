@@ -1,0 +1,57 @@
+package Nier.Objet;
+
+import Nier.Deplacement.*;
+import java.awt.Color;
+import Nier.Exception.OutOfAreaException;
+
+/**
+ * Classe héritiére de Actor, implémentant les joueurs.
+ */
+public class Player extends Actor {
+    // CONSTANTE
+    
+        public static final int FORM = Obj.PLAYER;;
+        public static final int WEIGHT = 40;
+        public static final int HEIGHT = 40;
+        
+    // CONSTRUCTEUR
+    
+    public Player(ICoord pos, IMovement mov) {
+        super(pos, mov, 4);
+        
+    }
+    
+    // REQUÊTES
+    
+    public int getForm() {
+        return FORM;
+    }
+    
+    public int getWeight() {
+        return WEIGHT;
+    }
+    
+    public int getHeight() {
+        return HEIGHT;
+    }
+    
+    // METHODE
+    
+    /**
+     * Déplace le joueur celon les touches préssées.
+     */
+    public void push(boolean z, boolean q, boolean s, boolean d) {
+        ((PlayerMovement) getMovement()).nextCoord(getPosition(), z, q, s, d);
+        
+        try {
+            getPosition().setCol(getMovement().getCol());
+        } catch (OutOfAreaException e) {
+        }
+        
+        try {
+            getPosition().setRow(getMovement().getRow());
+        } catch (OutOfAreaException e) {
+        }
+    }
+           
+}

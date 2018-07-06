@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=IActor
+comment0.text=\r\n\ Interface\ d\u00E9finissant\ les\ propri\u00E9t\u00E9s\ des\ acteurs\ du\ jeu.\r\n\r\n\ @author\ Maxime\ Moraine\r\n\ \r\n\ @inv\r\n\ \ \ \ \ \ 0\ <\=\ getLife()\ <\=\ getMaxLife()\r\n\ \ \ \ \ \ getPosition()\ \!\=\ null\r\n\ \ \ \ \ \ isAlive()\ <\=\=>\ (getLife()\ >\ 0)\r\n\ \ \ \ \ \ getMovement()\ \!\=\ null\r\n\ \ \ \ \ \ \r\n\ @cons\r\n\ \ \ \ \ \ $ARG$\r\n\ \ \ \ \ \ \ \ \ \ ICoord\ pos,\ IMovement\ mov,\ int\ hp\r\n\ \ \ \ \ \ $PRE$\r\n\ \ \ \ \ \ \ \ \ \ pos\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \ mov\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \ hp\ >\ 0\r\n\ \ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ \ getMaxLife()\ \=\=\ hp\r\n\ \ \ \ \ \ \ \ \ \ getLife()\ \=\=\ hp\r\n\ \ \ \ \ \ \ \ \ \ getPosition()\ \=\=\ pos\r\n\ \ \ \ \ \ \ \ \ \ getMovement()\ \=\=\ mov\r\n
+comment1.params=
+comment1.target=int\ getMaxLife()
+comment1.text=\r\n\ Renvoie\ les\ hp\ max\ de\ l'acteur.\r\n
+comment2.params=
+comment2.target=int\ getLife()
+comment2.text=\r\n\ Renvoie\ les\ hp\ actuel\ de\ l'acteur.\r\n
+comment3.params=
+comment3.target=Nier.Deplacement.ICoord\ getPosition()
+comment3.text=\r\n\ Renvoie\ la\ position\ de\ l'acteur.\r\n
+comment4.params=
+comment4.target=Nier.Deplacement.IMovement\ getMovement()
+comment4.text=\r\n\ Renvoie\ le\ mouvement\ de\ l'acteur.\r\n
+comment5.params=
+comment5.target=boolean\ isAlive()
+comment5.text=\r\n\ Renvoie\ si\ l'acteur\ est\ en\ vie\ ou\ non.\r\n
+numComments=6

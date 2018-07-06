@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=RotateGenerator
+comment1.params=pos\ mov\ inter
+comment1.target=RotateGenerator(Nier.Deplacement.ICoord,\ Nier.Deplacement.IMovement,\ int)
+comment2.params=
+comment2.target=void\ generate()
+comment2.text=\r\n\ Une\ fois\ le\ projectil\ g\u00E9n\u00E9r\u00E9,\ incr\u00E9mente\ l'angle.\r\n
+numComments=3

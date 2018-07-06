@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Graphique
+comment0.text=\r\n\ G\u00E8re\ l'interface\ du\ jeu.\r\n\ Permet\ d'afficher\ des\ objets\ dans\ une\ fen\u00EAtre\r\n\r\n\ @author\ Maxime\ Moraine\r\n
+comment1.params=
+comment1.target=Graphique()
+comment2.params=
+comment2.target=PrintPanel\ getPan()
+comment3.params=n
+comment3.target=void\ setTitle(java.lang.String)
+comment3.text=\r\n\ Change\ le\ titre\ de\ la\ fen\u00EAtre.\r\n\ \r\n\ @pre\ \r\n\ \ \ \ \ \ \ n\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ \ titre\ \=\=\ n\r\n
+comment4.params=x\ y
+comment4.target=void\ setSize(int,\ int)
+comment4.text=\r\n\ Change\ la\ taille\ de\ la\ fenetre.\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ x\ >\=\ 0\r\n\ \ \ \ \ \ y\ >\=\ 0\r\n\ @post\r\n\ \ \ \ \ \ largeur\ \=\ x\ (en\ px)\r\n\ \ \ \ \ \ hauteur\ \=\ y\ (en\ px)\r\n
+comment5.params=
+comment5.target=void\ print()
+comment5.text=\r\n\ affiche\ l'objet\ envoy\u00E9\ en\ param\u00E8tre\ \u00E0\ sa\ position\ courante\r\n\ selon\ sa\ propre\ d\u00E9finition.\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ obj\ \!\=\ null\r\n
+comment6.params=obj
+comment6.target=void\ addObj(Nier.Objet.Obj)
+comment6.text=\r\n\ Ajoute\ l'objet\ obj\ \u00E0\ la\ liste\ des\ objets\ \u00E0\ afficher.\r\n\ \r\n\ \ @pre\r\n\ \ \ \ \ \ obj\ \!\=\ null\r\n
+comment7.params=obj
+comment7.target=void\ removeObj(Nier.Objet.Obj)
+comment7.text=\r\n\ Supprime\ l'objet\ obj\ \u00E0\ la\ liste\ des\ objets\ \u00E0\ afficher.\r\n\ \r\n\ \ @pre\r\n\ \ \ \ \ \ obj\ \!\=\ null\r\n
+numComments=8

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Movement
+comment0.text=\r\n\ Impl\u00E8mente\ en\ partie\ l'interface\ IMovement\r\n\ \r\n\ Movement\ calcul\ la\ prochaine\ coordonn\u00E9e\ selon\ une\r\n\ certaine\ \u00E9quation\ et\ se\ moque\ \u00E9perdument\ de\ savoir\r\n\ si\ les\ coordonn\u00E9e\ r\u00E9sultantes\ de\ l'\u00E9quation\ sont\r\n\ correcte.\r\n
+comment1.params=p
+comment1.target=void\ nextCoord(ICoord)
+numComments=2

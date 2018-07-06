@@ -1,0 +1,72 @@
+import Graphique.Graphique;
+import Objet.*;
+import Deplacement.*;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import java.util.List;
+import java.util.Iterator;
+
+/**
+ * Permet de lancer le jeu !
+ *
+ * @author Maxime Moraine
+ */
+public class Game {
+    
+    // CONSTANTE
+    
+        public static final int FPS = 10;
+        
+        private IMovement m = new MvtLinear(0, 0);
+        private ICoord p = new Coord(400, 400);
+        private RotateGenerator pr = new RotateGenerator(p, m, 1);
+        
+        private IMovement gm = new MvtLinear(0, 0);
+        private ICoord gp = new Coord(450, 400);
+        private ProjectileRed test = new ProjectileRed(gp, gm);
+        public final Graphique fenetre = new Graphique();
+    
+    // MAIN
+    
+    /**
+     * Initialise la partie puis la lance.
+     */
+    public void Game() {
+
+       fenetre.setTitle("Nier Protomata");
+       fenetre.setSize(ICoord.LAST_COL, ICoord.LAST_ROW);
+       
+       Timer timer = new Timer();
+       TimerTask tache = new TimerTask() {
+           //@Override
+                public void run() {
+                    launchGame(fenetre);
+                }
+            };
+               
+       // Initialisation des participants de la partie.
+       
+       long temps = 1000/FPS; //FPS fps
+       timer.schedule(tache, 0, temps);
+    }
+    
+    // OUTILS
+    
+    /**
+     * Contient le script du déroulement de la partie.
+     */
+    private void launchGame(Graphique fenetre) {
+        
+        pr.generate();
+        List projectiles = test.allProjectiles();
+        Iterator i = projectiles.iterator();
+        while (i.hasNext()) {
+            Projectile pp = (Projectile) i.next();
+            pp.push();
+        }
+       
+       fenetre.print();
+       // Gestion des participants
+    }
+}

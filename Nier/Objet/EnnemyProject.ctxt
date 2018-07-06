@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=EnnemyProject
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ abstraite\ EnnemyProject\ ici.\r\n\r\n\ @author\ \ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=pos\ mov\ a\ b\ creat
+comment1.target=EnnemyProject(Nier.Deplacement.PolarCoord,\ Nier.Deplacement.IMovement,\ int,\ int,\ Actor)
+comment2.params=
+comment2.target=void\ push()
+comment2.text=\r\n\ \u00E9tend\ push\ de\ projectile\ en\ rajoutant\ le\ traitement\ des\ colisions.\r\n
+numComments=3

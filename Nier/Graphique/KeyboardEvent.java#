@@ -1,0 +1,69 @@
+package Nier.Graphique;
+
+import javax.swing.JPanel;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import Nier.Objet.Player;
+
+/**
+ * Gére les événement clavier.
+ * 
+ * @cons
+ *      $ARGS$
+ *          JPanel p, Player p1_
+ *      $PRE$
+ *          p != null
+ *          p1_ != null
+ *      $POST$
+ *          getPan() == p
+ *          getPlayer() == p1_
+ */
+class KeyboardEvent implements KeyListener {
+    private final JPanel pan;
+    private final Player p1;
+     
+    // CONSTRUCTEUR
+    
+    public KeyboardEvent(JPanel p, Player p1_) {
+        if (p == null || p1_ == null) {
+            throw new AssertionError();
+        }
+        pan = p;
+        p1 = p1_;
+    }
+    
+    // REQUETE
+    
+    public JPanel getPan() {
+        return pan;
+    }
+    
+    public Player getPlayer() {
+        return p1;
+    }
+ 
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyChar() == 'z') {
+            getPlayer().push(true, false, false, false);
+        }
+        else if (e.getKeyChar() == 'q') {
+            getPlayer().push(false, true, false, false);
+        }
+        else if (e.getKeyChar() == 's') {
+            getPlayer().push(false, false, true, false);
+        }
+        else if (e.getKeyChar() == 'd') {
+            getPlayer().push(false, false, false, true);
+        }
+    }
+    
+    @Override
+    public void keyReleased(KeyEvent e) {
+        //rien
+    }
+ 
+    public void keyTyped(KeyEvent e) {
+        // on ne fait rien
+    }
+}

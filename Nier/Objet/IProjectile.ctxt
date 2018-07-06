@@ -1,0 +1,37 @@
+#BlueJ class context
+comment0.target=IProjectile
+comment0.text=\r\n\ Permet\ la\ cr\u00E9ation\ de\ projectile\ permettant\ ainsi\ d'attaquer\r\n\ le\ camp\ adverse.\r\n\r\n\ @author\ \ Moraine\ Maxime\r\n\ @version\ 17/05/2018\r\n\ \r\n\ @inv\r\n\ \ \ \ \ \ 0\ <\=\ getLife()\ <\=\ getMaxLife()\r\n\ \ \ \ \ \ getPosition()\ \!\=\ null\r\n\ \ \ \ \ \ isAlive()\ <\=\=>\ (life()\ >\ 0)\r\n\ \ \ \ \ \ getMovement()\ \!\=\ null\r\n\ \ \ \ \ \ getDammage()\ >\ 0\r\n\ \ \ \ \ \ \r\n\ @cons\r\n\ \ \ \ \ \ $ARGS$\ ICoord\ pos,\ IMovement\ mov,\ int\ moveSpeed,\ int\ dmg,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ int\ hp,\ Actor\ creat\r\n\ \ \ \ \ \ $PRE$\r\n\ \ \ \ \ \ \ \ \ \ pos\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \ mov\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \ dmg\ >\ 0\r\n\ \ \ \ \ \ \ \ \ \ hp\ >\ 0\r\n\ \ \ \ \ \ \ \ \ \ creat\ \!\=\ null\r\n\ \ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ \ getMaxLife()\ \=\=\ hp\r\n\ \ \ \ \ \ \ \ \ \ getLife()\ \=\=\ hp\r\n\ \ \ \ \ \ \ \ \ \ getDammage()\ \=\=\ dmg\r\n\ \ \ \ \ \ \ \ \ \ getPosition()\ \=\=\ pos\r\n\ \ \ \ \ \ \ \ \ \ getMovement()\ \=\=\ mov\r\n\ \ \ \ \ \ \ \ \ \ getCreator()\ \=\=\ creat\r\n
+comment1.params=
+comment1.target=int\ getMaxLife()
+comment1.text=\r\n\ Renvoie\ les\ hp\ max\ du\ projectile.\r\n
+comment10.params=
+comment10.target=void\ kill()
+comment10.text=\r\n\ Tue\ le\ projectile\ en\ question\ en\ le\ supprimant\ de\ la\r\n\ liste\ des\ projectiles\ existant,\ il\ perdra\ ainsi\ tous\ r\u00E9f\u00E9rencement.\r\n
+comment11.params=
+comment11.target=void\ push()
+comment11.text=\r\n\ Change\ les\ coordonn\u00E9es\ du\ projectile\ selon\ ca\ m\u00E9thode\ de\ d\u00E9placement\r\n\ getMovement()\ et\ ces\ coordonn\u00E9es\ actuels\ getPosition().\r\n\ Si\ les\ futures\ coordonn\u00E9es\ sont\ refuser,\ le\ projectile\ meurt.\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ isAlive()\r\n\ @post\r\n\ \ \ \ \ \ getPosition().getCol()\ \=\=\ getMovement().getCol()\r\n\ \ \ \ \ \ getPostion().getRow()\ \=\=\ getMovement().getRow()\r\n\ \ \ \ \ \ (\ apr\u00E8s\ avoir\ appel\u00E9\ getMovement().newtCoord(getPosition())\ )\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ Si\ il\ y\ a\ une\ OutOfAreaException,\ le\ projectile\ meurt.\r\n
+comment2.params=
+comment2.target=int\ getLife()
+comment2.text=\r\n\ Renvoie\ les\ hp\ actuel\ du\ projectile.\r\n
+comment3.params=
+comment3.target=int\ getDammage()
+comment3.text=\r\n\ Renvoie\ les\ dommages\ du\ projectile.\r\n
+comment4.params=
+comment4.target=Nier.Deplacement.ICoord\ getPosition()
+comment4.text=\r\n\ Renvoie\ la\ position\ du\ projectile.\r\n
+comment5.params=
+comment5.target=Nier.Deplacement.IMovement\ getMovement()
+comment5.text=\r\n\ Renvoie\ le\ mouvement\ du\ projectile.\r\n
+comment6.params=
+comment6.target=boolean\ isAlive()
+comment6.text=\r\n\ Renvoie\ si\ le\ projectile\ est\ en\ vie\ ou\ non.\r\n
+comment7.params=
+comment7.target=java.util.Set\ allProjectiles()
+comment7.text=\r\n\ Renvoie\ l'ensemble\ des\ projectiles\ cr\u00E9\u00E9s\ et\ encore\ effectif\r\n\ sous\ forme\ de\ liste.\r\n
+comment8.params=x\ y
+comment8.target=void\ setPosition(int,\ int)
+comment8.text=\r\n\ Change\ la\ position\ du\ projectile\ selon\ celle\ envoy\u00E9\ en\ param\u00E8tre.\r\n\ \r\n\ @arg\ int\ x,\ int\ y\r\n\ @pre\ x\ et\ y\ sont\ des\ coordonn\u00E9es\ valide\ selon\ la\r\n\ \ \ \ \ \ sp\u00E9cification\ de\ ICoord\ sinon,\ renvoie\ une\r\n\ \ \ \ \ \ AssertionError.\r\n\ \ \ \ \ \ &&\ isAlive()\r\n\ @post\r\n\ \ \ \ \ \ getPosition().getCol()\ \=\=\ x\r\n\ \ \ \ \ \ getPosition().getRow()\ \=\=\ y\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ getMaxLife()\ \=\=\ old\ getMaxLife()\r\n\ \ \ \ \ \ getLife()\ \=\=\ old\ getLife()\r\n\ \ \ \ \ \ getDammage()\ \=\=\ old\ getDammage()\r\n\ \ \ \ \ \ getMovement()\ \=\=\ old\ getMovement()\r\n
+comment9.params=m
+comment9.target=void\ setMovement(Nier.Deplacement.IMovement)
+comment9.text=\r\n\ Change\ le\ mouvement\ du\ projectile\ selon\ celui\ envoy\u00E9\ en\ param\u00E8tre.\r\n\ \r\n\ @arg\ IMovement\ m\r\n\ @pre\r\n\ \ \ \ \ \ m\ \!\=\ null\r\n\ \ \ \ \ \ isAlive()\r\n\ @post\r\n\ \ \ \ \ \ getMovement()\ \=\=\ m\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ getMaxLife()\ \=\=\ oldgetMaxLife()\r\n\ \ \ \ \ \ getLife()\ \=\=\ old\ getLife()\r\n\ \ \ \ \ \ getDammage()\ \=\=\ old\ getDammage()\r\n\ \ \ \ \ \ getPosition()\ \=\=\ old\ getPosition()\r\n
+numComments=12

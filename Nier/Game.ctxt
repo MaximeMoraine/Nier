@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Game
+comment0.text=\r\n\ Permet\ de\ lancer\ le\ jeu\ \!\r\n\r\n\ @author\ Maxime\ Moraine\r\n
+comment1.params=
+comment1.target=Graphique.Graphique\ getFenetre()
+comment2.params=
+comment2.target=void\ game()
+comment2.text=\r\n\ Initialise\ la\ partie\ puis\ la\ lance.\r\n
+comment3.params=
+comment3.target=void\ run()
+comment4.params=fenetre
+comment4.target=void\ launchGame(Graphique.Graphique)
+comment4.text=\r\n\ Contient\ le\ script\ du\ d\u00E9roulement\ de\ la\ partie.\r\n
+numComments=5

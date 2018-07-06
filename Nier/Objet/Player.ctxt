@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\r\n\ Classe\ h\u00E9riti\u00E9re\ de\ Actor,\ impl\u00E9mentant\ les\ joueurs.\r\n
+comment1.params=pos\ mov
+comment1.target=Player(Nier.Deplacement.ICoord,\ Nier.Deplacement.IMovement)
+comment10.params=
+comment10.target=void\ kill()
+comment2.params=
+comment2.target=int\ getForm()
+comment3.params=
+comment3.target=int\ getWeight()
+comment4.params=
+comment4.target=int\ getHeight()
+comment5.params=
+comment5.target=Nier.Deplacement.ICoord\ getPlayerMousePosition()
+comment6.params=
+comment6.target=java.util.Set\ getAllPlayer()
+comment7.params=z\ q\ s\ d
+comment7.target=void\ push(boolean,\ boolean,\ boolean,\ boolean)
+comment7.text=\r\n\ D\u00E9place\ le\ joueur\ celon\ les\ touches\ pr\u00E9ss\u00E9es.\r\n
+comment8.params=c
+comment8.target=void\ setNewPlayerMousePosition(Nier.Deplacement.ICoord)
+comment8.text=\r\n\ Permet\ d'actualiser\ les\ coordonn\u00E9es\ de\ la\ souris.\r\n
+comment9.params=
+comment9.target=void\ fire()
+comment9.text=\r\n\ permet\ au\ joueur\ de\ tirer\ des\ projectiles\ en\ direction\r\n\ de\ getPlayerMousePosition()\r\n
+numComments=11
