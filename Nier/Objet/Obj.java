@@ -1,30 +1,22 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.ICoord;
+import nier.deplacement.ICoord;
 
 
 
 /**
- * Permet de récupérer des informations sur les instances pour l'interface
- * graphique.
+ * Permet de récupérer les informations de base sur les instances.
  */
 public abstract class Obj {
     
-    // CONSTANTES
-    
-    public static final int CIRCLE = 0;
-    public static final int GENERATOR = 1;
-    public static final int ENEMY = 2;
-    public static final int PLAYER = 3;
-    public static final int PROJECT_PLAYER = 4;
-    
-    // CONSTRUCTEUR
+    // Constructeur
     
     public Obj() {
-        Nier.Game.getFenetre().addObj(this);
+        nier.Game.FENETRE.addObj(this);
     }
     
-    // REQUÊTES
+    
+    // Requêtes
     
     /**
      * Renvoie la forme de l'objet.
@@ -45,5 +37,10 @@ public abstract class Obj {
      * Renvoie la hauteur de l'objet en pixel.
      */
     public abstract int getHeight();
+    
+    /**
+     * Suppression des cadavres...
+     */
+    public abstract void kill();
 
 }

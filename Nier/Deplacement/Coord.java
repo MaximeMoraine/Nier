@@ -1,6 +1,6 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
-import Nier.Exception.OutOfAreaException;
+import nier.exception.OutOfAreaException;
 
 /**
  * Implèmente l'interface ICoord.
@@ -26,6 +26,7 @@ public class Coord implements ICoord {
         col = x;
         row = y;
     }
+    
     
     // REQUÊTE
     
@@ -69,7 +70,8 @@ public class Coord implements ICoord {
         return "(" + getCol() + "," + getRow() + ")";
     }
     
-    // COMMANDES
+    
+    // METHODE
     
     /**
      * @pre correctCol(x)
@@ -90,6 +92,7 @@ public class Coord implements ICoord {
         
         row = y;
     }
+    
     
     // OUTILS
     

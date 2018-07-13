@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=RotateGenerator
+comment0.text=\r\n\ Generateur\ neutre\ tirant\ autour\ de\ lui\ en\ incr\u00E9mentant\ un\ certain\ angle.\r\n
+comment1.params=pos\ mov\ inter\ speedProject\ angle
+comment1.target=RotateGenerator(nier.deplacement.ICoord,\ nier.deplacement.IMovement,\ int,\ int,\ int)
+comment2.params=
+comment2.target=java.util.List\ getAllRotateGenerator()
+comment3.params=
+comment3.target=int\ getColor()
+comment4.params=
+comment4.target=double\ getAngle()
+comment5.params=
+comment5.target=void\ generate()
+comment5.text=\r\n\ Une\ fois\ le\ projectil\ g\u00E9n\u00E9r\u00E9,\ incr\u00E9mente\ l'angle\ de\ tir.\r\n
+comment6.params=
+comment6.target=void\ kill()
+numComments=7

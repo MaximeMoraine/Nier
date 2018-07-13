@@ -1,6 +1,6 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
-import Nier.Exception.OutOfAreaException;
+import nier.exception.OutOfAreaException;
 
 /**
  * Type des coordonnées à associer à un autre Objet.
@@ -41,7 +41,7 @@ public interface ICoord {
     /**
      * Valeur maximale des colonnes.
      */
-    int LAST_COL = 1500;
+    int LAST_COL = 1920;
     
     /**
      * Valeur minimale des lignes.
@@ -51,7 +51,7 @@ public interface ICoord {
     /**
      * Valeur maximale des lignes.
      */
-    int LAST_ROW = 700;
+    int LAST_ROW = 1000;
     
     /**
      * Agrandissement de la fenetre.

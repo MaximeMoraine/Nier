@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Enemy
+comment0.text=\r\n\ Classe\ h\u00E9riti\u00E9re\ de\ Actor,\ impl\u00E9mentant\ les\ joueurs.\r\n
+comment1.params=pos\ mov
+comment1.target=Enemy(nier.deplacement.ICoord,\ nier.deplacement.IMovement)
+comment2.params=
+comment2.target=int\ getForm()
+comment3.params=
+comment3.target=int\ getWeight()
+comment4.params=
+comment4.target=int\ getHeight()
+comment5.params=
+comment5.target=void\ kill()
+numComments=6

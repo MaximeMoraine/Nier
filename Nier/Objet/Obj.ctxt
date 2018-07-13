@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Obj
+comment0.text=\r\n\ Permet\ de\ r\u00E9cup\u00E9rer\ les\ informations\ de\ base\ sur\ les\ instances.\r\n
+comment1.params=
+comment1.target=Obj()
+comment2.params=
+comment2.target=int\ getForm()
+comment2.text=\r\n\ Renvoie\ la\ forme\ de\ l'objet.\r\n
+comment3.params=
+comment3.target=nier.deplacement.ICoord\ getPosition()
+comment3.text=\r\n\ Renvoie\ l'objet\ contenant\ la\ position\ de\ this.\r\n
+comment4.params=
+comment4.target=int\ getWeight()
+comment4.text=\r\n\ Renvoie\ la\ largeur\ de\ l'objet\ en\ pixel.\r\n
+comment5.params=
+comment5.target=int\ getHeight()
+comment5.text=\r\n\ Renvoie\ la\ hauteur\ de\ l'objet\ en\ pixel.\r\n
+comment6.params=
+comment6.target=void\ kill()
+comment6.text=\r\n\ Suppression\ des\ cadavres...\r\n
+numComments=7

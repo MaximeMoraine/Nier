@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=FourGunGenerator
+comment0.text=\r\n\ Rotate\ generator\ poss\u00E9dant\ 4\ canons\r\n
+comment1.params=pos\ mov\ inter\ speedProject\ angle
+comment1.target=FourGunGenerator(nier.deplacement.ICoord,\ nier.deplacement.IMovement,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ generate()
+numComments=3

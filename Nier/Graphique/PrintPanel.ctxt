@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=PrintPanel
+comment0.text=\r\n\ H\u00E9rite\ de\ la\ classe\ JPanel\ et\ affiche\ les\ objets\ envoy\u00E9.\r\n
+comment1.params=
+comment1.target=PrintPanel()
+comment2.params=
+comment2.target=java.util.List\ getObj()
+comment2.text=\r\n\ Renvoie\ la\ liste\ des\ objets\ sur\ lesquels\ on\ travaille.\r\n
+comment3.params=
+comment3.target=controle.KeyboardEvent\ getKeyboardEvent()
+comment3.text=\r\n\ Renvoie\ le\ KeyboardEvent\ associ\u00E9\ \u00E0\ ce\ pan.\r\n
+comment4.params=
+comment4.target=controle.EventMouse\ getMouseEvent()
+comment4.text=\r\n\ Renvoie\ le\ EventMouse\ associ\u00E9\ \u00E0\ ce\ pan.\r\n
+comment5.params=o
+comment5.target=void\ addObj(nier.objet.Obj)
+comment5.text=\r\n\ On\ ajoute\ o\ \u00E0\ la\ liste\ des\ objets.\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ o\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ getObj()\ \=\=\ (old\ getObj)\ +\ o\r\n
+comment6.params=o
+comment6.target=void\ removeObj(nier.objet.Obj)
+comment6.text=\r\n\ On\ supprime\ o\ \u00E0\ la\ liste\ des\ objets.\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ o\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ getObj()\ \=\=\ (old\ getObj)\ -\ o\r\n
+comment7.params=
+comment7.target=void\ removeAll()
+comment7.text=\r\n\ Supprime\ tous\ individu\ de\ la\ fen\u00EAtre.\r\n
+comment8.params=g
+comment8.target=void\ paintComponent(java.awt.Graphics)
+comment8.text=\r\n\ affiche\ l'objet\ getObj().\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ g\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ getObj()\ apparait\ sur\ la\ fen\u00EAtre.\r\n
+numComments=9

@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=PolarCoord
+comment0.text=\r\n\ Classe\ g\u00E9rant\ les\ coordonn\u00E9es\ polair.\r\n\ \r\n\ @cons\r\n\ \ \ \ \ \ $ARG$\r\n\ \ \ \ \ \ \ \ \ \ Coord\ start_\r\n\ \ \ \ \ \ \ \ \ \ double\ r_\r\n\ \ \ \ \ \ \ \ \ \ int\ angle_\r\n\ \ \ \ \ \ $PRE$\r\n\ \ \ \ \ \ \ \ \ \ start_\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \ angle\ >\=\ 0\r\n\ \ \ \ \ \ $POST\r\n\ \ \ \ \ \ \ \ \ \ getStart()\ \=\=\ start_\r\n\ \ \ \ \ \ \ \ \ \ getR()\ \=\=\ r_\r\n\ \ \ \ \ \ \ \ \ \ getAngle()\ \=\=\ angle_\r\n
+comment1.params=x\ y\ angle1\ r1
+comment1.target=PolarCoord(int,\ int,\ double,\ int)
+comment2.params=
+comment2.target=int\ getR()
+comment3.params=
+comment3.target=double\ getAngle()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment5.params=
+comment5.target=int\ searchCol()
+comment5.text=\r\n\ Calcul\ la\ colonne\ associ\u00E9\ \u00E0\ la\ coordonn\u00E9e\ polair.\r\n
+comment6.params=
+comment6.target=int\ searchRow()
+comment6.text=\r\n\ Calcul\ la\ ligne\ associ\u00E9e\ \u00E0\ la\ coordonn\u00E9e\ polair.\r\n
+comment7.params=r1
+comment7.target=void\ setR(int)
+numComments=8

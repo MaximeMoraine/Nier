@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=MvtSine
+comment0.text=\r\n\ Calcul\ la\ prochaine\ position\ selon\ un\ mouvement\ sinuso\u00EFdale.\r\n\ \r\n\ @cons\r\n\ \ \ \ \ \ $ARG$\ int\ a,\ int\ b,\ int\ c\r\n\ \ \ \ \ \ $PRE$\r\n\ \ \ \ \ \ \ \ \ \ c\ \!\=\ 0\r\n\ \ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ \ getCoefA()\ \=\=\ a\r\n\ \ \ \ \ \ \ \ \ \ getCoefB()\ \=\=\ b\r\n\ \ \ \ \ \ \ \ \ \ getCoefC()\ \=\=\ c\r\n
+comment1.params=a\ b\ c
+comment1.target=MvtSine(int,\ int,\ int)
+comment2.params=
+comment2.target=int\ getCoefA()
+comment3.params=
+comment3.target=int\ getCoefB()
+comment4.params=
+comment4.target=int\ getCoefC()
+comment5.params=
+comment5.target=int\ getCol()
+comment6.params=
+comment6.target=int\ getRow()
+comment7.params=
+comment7.target=IMovement\ getOpposite()
+comment8.params=p
+comment8.target=void\ nextCoord(ICoord)
+comment8.text=\r\n\ @arg\ ICoord\ p\r\n\ @pre\ p\!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ getCol()\ \=\=\r\n\ \ \ \ \ \ getRow()\ \=\=\r\n
+numComments=9

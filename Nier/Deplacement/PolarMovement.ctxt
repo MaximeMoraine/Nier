@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=PolarMovement
+comment0.text=\r\n\ Calcul\ la\ prochaine\ position\ selon\ un\ mouvement\ d\u00E9di\u00E9\ au\ projectile.\r\n\ Le\ projectile\ va\ utiliser\ les\ coordonn\u00E9es\ polaire.\r\n\ \r\n\ @cons\r\n\ \ \ \ \ \ $ARG$\ int\ speed\r\n\ \ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ \ getSpeed()\ \=\=\ speed\r\n
+comment1.params=speed1
+comment1.target=PolarMovement(int)
+comment2.params=
+comment2.target=int\ getSpeed()
+comment3.params=
+comment3.target=int\ getCol()
+comment4.params=
+comment4.target=int\ getRow()
+comment5.params=
+comment5.target=IMovement\ getOpposite()
+comment6.params=po
+comment6.target=void\ nextCoord(ICoord)
+comment6.text=\r\n\ @arg\ PolarCoord\ p\r\n\ @pre\ p\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ on\ va\ avancer\ de\ getSpeed()\ sur\ l'axe\ de\ p.getAngle().\r\n
+numComments=7

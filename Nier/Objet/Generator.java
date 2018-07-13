@@ -1,50 +1,54 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.*;
-import Nier.Exception.OutOfAreaException;
+import nier.deplacement.IMovement;
+import nier.deplacement.ICoord;
+import nier.exception.OutOfAreaException;
+import nier.constante.Constante;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Classe héritiére de Actor, implémentant
- * les Source (génère des projectiles).
+ * les générateur (génère des projectiles).
  */
 public abstract class Generator extends Actor {
-    // CONSTANTE
     
-        public static final int FORM = Obj.GENERATOR;
+    // Constante
+    
+        public static final int FORM = Constante.GENERATOR;
         public static final int WEIGHT = 30;
         public static final int HEIGHT = 30;
-        public static final int SPEED_PROJECT = 2;
-        
-        public static final int MALLOW = 1;
+        public static final int MALLOW = -1;
         public static final int RED = 0;
+        public static final List ALL_GENERATOR = new ArrayList();
         
-    // ATTRIBUTS
+        
+    // Attributs
     
         private final int interval;
-        protected int cmpt = 0; // Compteur pour generate()
-        protected int color = RED;
-
+        private final int speedProject;
         
-    // CONSTRUCTEUR
+        
+    // Constructeur
     
     /**
      * L'interval (inter) définit au bout de combien de tir, le génèrateur
      * changera de couleur.
      * 
-     * @pre
-     *      inter > 0
+     * inter == 0 -> Red
+     * inter == -1 -> Mallow
+     * else swith between Red and Mallow
      */
-    public Generator(ICoord pos, IMovement mov, int inter) {
+    public Generator(ICoord pos, IMovement mov, int inter, int speedProject1) {
         super(pos, mov, 4);
         
-        if (inter <= 0) {
-            throw new AssertionError();
-        }
-        
+        speedProject = speedProject1;
         interval = inter;
+        ALL_GENERATOR.add(this);
     }
     
-    // REQUÊTES
+    
+    // Requêtes
     
     public int getForm() {
         return FORM;
@@ -62,15 +66,16 @@ public abstract class Generator extends Actor {
         return interval;
     }
     
-    public int getCmpt() {
-        return cmpt;
+    public static List getAllGenerator() {
+        return ALL_GENERATOR;
     }
     
-    public int getColor() {
-        return color;
+    public int getSpeedProject() {
+        return speedProject;
     }
     
-    // METHODE
+    
+    // Methode
     
     /**
      * Génére des projectiles et change de couleur selon l'interval
@@ -90,6 +95,11 @@ public abstract class Generator extends Actor {
         } catch (OutOfAreaException e) {
             setMovement(getMovement().getOpposite());
         }
+    }
+    
+    public void kill() {
+        super.kill();
+        ALL_GENERATOR.remove(this);
     }
               
 }

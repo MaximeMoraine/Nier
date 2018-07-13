@@ -1,4 +1,4 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
 /**
  * Calcul la prochaine position selon un mouvement dédié au projectile.
@@ -9,7 +9,7 @@ package Nier.Deplacement;
  *      $POST$
  *          getSpeed() == speed
  */
-public class ProjectMovement extends Movement {
+public class PolarMovement extends Movement {
     
     // ATTRIBUTS
     
@@ -19,8 +19,8 @@ public class ProjectMovement extends Movement {
         
     // CONSTRUCTEUR
     
-    public ProjectMovement(int speed_) {
-        speed = speed_;
+    public PolarMovement(int speed1) {
+        speed = speed1;
     }
     
     // REQUÊTES
@@ -41,7 +41,7 @@ public class ProjectMovement extends Movement {
         return this;
     }
     
-    // COMMANDE
+    // METHODE
     
     /**
      * @arg PolarCoord p
@@ -56,7 +56,5 @@ public class ProjectMovement extends Movement {
        p.setR(p.getR() + getSpeed());
        resX = p.searchCol();
        resY = p.searchRow();
-       
-      
     }
 }

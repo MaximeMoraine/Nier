@@ -1,55 +1,101 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.*;
+import nier.constante.Constante;
+import nier.deplacement.IMovement;
+import nier.deplacement.ICoord;
+import nier.deplacement.PolarCoord;
+import nier.deplacement.PolarMovement;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Generateur neutre tirant autour de lui en incrémentant un certain angle.
+ */ 
 public class RotateGenerator extends Generator {
     
-    // CONSTANTE
+    // Constante
         
-        public static final int DEGRE_0 = 0;
-        public static final int DEGRE_45 = 45;
-        public static final int DEGRE_90 = 90;
-        public static final int DEGRE_135 = 135;
-        public static final int DEGRE_180 = 180;
-        public static final int DEGRE_225 = 225;
-        public static final int DEGRE_270 = 270;
-        public static final int DEGRE_360 = 360;
+        public static final List ALL_ROTATE_GENERATOR = new ArrayList();
    
-    // ATTRIBUT
+        
+    // Attributs
+    
         private double angle = 0;
+        private int cmpt = 0; // Compteur pour generate()
+        private int color = RED;
+        private int incAngle;
+        
+    
+    // Constructeur
 
-    public RotateGenerator(ICoord pos, IMovement mov, int inter) {
-        super(pos, mov, inter);
+    public RotateGenerator(ICoord pos, IMovement mov, int inter,
+            int speedProject, int angle) {
+        super(pos, mov, inter, speedProject);
+        incAngle = angle;
+        ALL_ROTATE_GENERATOR.add(this);
     }
     
+    
+    // Requete
+    
+    public static List getAllRotateGenerator() {
+        return ALL_ROTATE_GENERATOR;
+    }
+    
+    public int getColor() {
+        return color;
+    }
+    
+    public double getAngle() {
+        return angle;
+    }
+    
+    
+    // Methode
+    
     /**
-     * Une fois le projectil généré, incrémente l'angle.
+     * Une fois le projectil généré, incrémente l'angle de tir.
      */
     public void generate() {
 
-        PolarCoord pos = new PolarCoord(getPosition().getCol() + getWeight() / 2,
-                                        getPosition().getRow() - getHeight() / 2,
-                                    angle, 0);
+        PolarCoord pos = new PolarCoord(
+                                getPosition().getCol() + getWeight() / 2,
+                                getPosition().getRow() - getHeight() / 2,
+                                angle, 0);
            
-        IMovement mov = new ProjectMovement(4);
+        IMovement mov = new PolarMovement(getSpeedProject());
         
-        if (color == Generator.RED) {
+        // Un intervalle null signifie que des rouges
+        // Un intervalle égal à -1 signifie que des bleues.
+        if (getInterval() == RED) {
             new ProjectileRed(pos, mov, this);
-        }
-        else if (color == Generator.MALLOW) {
-            new ProjectileMallow(pos, mov, this);
+        } else {
+            if (getInterval() == MALLOW) {
+                new ProjectileMallow(pos, mov, this);
+            } else {
+                if (color == Generator.RED) {
+                    new ProjectileRed(pos, mov, this);
+                } else if (color == Generator.MALLOW) {
+                    new ProjectileMallow(pos, mov, this);
+                }
+               
+                cmpt = (cmpt + 1) % getInterval();
+                if (cmpt == 0) {
+                    if (color == Generator.MALLOW) {
+                        color = Generator.RED;
+                    } else {
+                        color = Generator.MALLOW;
+                    }
+                }
+                
+            }
         }
         
-        angle = (angle + DEGRE_45) % DEGRE_360;
-        cmpt = (cmpt + 1) % getInterval();;
-        if (cmpt == 0) {
-            if (color == Generator.MALLOW) {
-                color = Generator.RED;
-            }
-            else {
-                color = Generator.MALLOW;
-            }
-        }
-        
+        angle = (angle + incAngle) % Constante.MAX_DEGREE;
+    }
+    
+    public void kill() {
+        super.kill();
+        ALL_ROTATE_GENERATOR.remove(this);
     }
 }

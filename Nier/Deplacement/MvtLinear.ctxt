@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=MvtLinear
+comment0.text=\r\n\ Calcul\ la\ prochaine\ position\ selon\ un\ mouvement\ lin\u00E9aire.\r\n\ \r\n\ @cons\r\n\ \ \ \ \ \ $ARG$\ int\ x,\ int\ y\r\n\ \ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ \ getCoefX()\ \=\=\ x\r\n\ \ \ \ \ \ \ \ \ \ getCoefY()\ \=\=\ y\r\n
+comment1.params=x\ y
+comment1.target=MvtLinear(int,\ int)
+comment2.params=
+comment2.target=int\ getCoefX()
+comment3.params=
+comment3.target=int\ getCoefY()
+comment4.params=
+comment4.target=int\ getCol()
+comment5.params=
+comment5.target=int\ getRow()
+comment6.params=
+comment6.target=IMovement\ getOpposite()
+comment7.params=p
+comment7.target=void\ nextCoord(ICoord)
+comment7.text=\r\n\ @arg\ ICoord\ p\r\n\ @pre\ p\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ getCol()\ \=\=\ p.getCol()\ +\ getCoefX()\r\n\ \ \ \ \ \ getRow()\ \=\=\ p.getRow()\ +\ getCoefY()\r\n
+numComments=8

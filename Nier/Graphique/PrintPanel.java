@@ -1,38 +1,32 @@
-package Nier.Graphique;
+package nier.graphique;
 
 import javax.swing.JPanel;
 import java.awt.Graphics;
-import Nier.Deplacement.ICoord;
-import java.util.Set;
-import java.util.HashSet;
+import nier.deplacement.ICoord;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Iterator;
 import javax.imageio.ImageIO;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 
-import Nier.Objet.Obj;
-import Nier.Objet.ProjectileRed;
-import Nier.Objet.ProjectileMallow;
+import nier.constante.Constante;
+import nier.objet.Obj;
+import nier.objet.ProjectileRed;
+import nier.objet.ProjectileMallow;
 
-import Nier.Graphique.Controle.KeyboardEvent;
-import Nier.Graphique.Controle.EventMouse;
-
+import nier.graphique.controle.KeyboardEvent;
+import nier.graphique.controle.EventMouse;
 
 /**
  * Hérite de la classe JPanel et affiche les objets envoyé.
  */
 public class PrintPanel extends JPanel {
-    // CONSTANTE
-    
-    public static final int CIRCLE = Obj.CIRCLE;
-    public static final int GENERATOR = Obj.GENERATOR;
-    public static final int PLAYER = Obj.PLAYER;
-    public static final int PROJECT_PLAYER = Obj.PROJECT_PLAYER;
     
     // ATTRIBUT
     
-    private static Set obj = new HashSet();
+    private final List obj = new ArrayList();
     private final KeyboardEvent ke;
     private final EventMouse e;
     
@@ -49,11 +43,11 @@ public class PrintPanel extends JPanel {
         super();
         
         try {
-            redProject = ImageIO.read(new File("Image/RedProject.gif"));
-            mallowProject = ImageIO.read(new File("Image/MallowProject.gif"));
-            generator = ImageIO.read(new File("Image/Generator.gif"));
-            player = ImageIO.read(new File("Image/Player.gif"));
-            projectPlayer = ImageIO.read(new File("Image/PlayerProject.gif"));
+            redProject = ImageIO.read(new File("image/RedProject.gif"));
+            mallowProject = ImageIO.read(new File("image/MallowProject.gif"));
+            generator = ImageIO.read(new File("image/Generator.gif"));
+            player = ImageIO.read(new File("image/Player.gif"));
+            projectPlayer = ImageIO.read(new File("image/PlayerProject.gif"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,16 +58,16 @@ public class PrintPanel extends JPanel {
         addKeyListener(ke);
         e = new EventMouse();
         addMouseMotionListener(e);
-        addMouseListener(e);
           
     }
+    
     
     // REQUÊTE
     
     /**
      * Renvoie la liste des objets sur lesquels on travaille.
      */
-    public Set getObj() {
+    public List getObj() {
         return obj;
     }
     
@@ -84,9 +78,13 @@ public class PrintPanel extends JPanel {
         return ke;
     }
     
+    /**
+     * Renvoie le EventMouse associé à ce pan.
+     */
     public EventMouse getMouseEvent() {
         return e;
     }
+    
     
     // METHODE
     
@@ -123,6 +121,26 @@ public class PrintPanel extends JPanel {
     }
     
     /**
+     * Supprime tous individu de la fenêtre.
+     */
+    public void removeAll() {
+        Iterator i = obj.iterator();
+        List iHaveToKill = new ArrayList();
+        
+        while (i.hasNext()) {
+            Obj that = (Obj) i.next();
+            iHaveToKill.add(that);
+        }
+        
+        i = iHaveToKill.iterator();
+        
+        while (i.hasNext()) {
+            Obj that = (Obj) i.next();
+            that.kill();
+        }
+    }
+    
+    /**
      * affiche l'objet getObj().
      * 
      * @pre
@@ -150,7 +168,7 @@ public class PrintPanel extends JPanel {
             int y = ICoord.LAST_ROW - p.getRow();
 
             switch (form) {
-                case CIRCLE:               
+                case Constante.CIRCLE:               
                     if (curObj instanceof ProjectileRed) {
                         g.drawImage(redProject, x, y, this);
                         break;
@@ -161,11 +179,11 @@ public class PrintPanel extends JPanel {
                     }
                     break;
                     
-                case PROJECT_PLAYER:
+                case Constante.PROJECT_PLAYER:
                     g.drawImage(projectPlayer, x, y, this);
                     break;
                     
-                case GENERATOR:
+                case Constante.GENERATOR:
                     g.drawImage(generator, x, y, this);
                     break;
                 

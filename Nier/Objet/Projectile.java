@@ -1,23 +1,29 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.ICoord;
-import Nier.Deplacement.Coord;
-import Nier.Deplacement.PolarCoord;
-import Nier.Deplacement.IMovement;
+import nier.deplacement.ICoord;
+import nier.deplacement.PolarCoord;
+import nier.deplacement.IMovement;
+import java.util.List;
+import java.util.ArrayList;
 
-import Nier.Exception.OutOfAreaException;
+import nier.exception.OutOfAreaException;
 
 public abstract class Projectile extends Obj implements IProjectile {
     
-    // CONSTANTE
-        public static final int NBR_COULEUR_PROJECT = 2;
+    // Constante
+    
+    public static final List ALL_PROJECTILES = new ArrayList();
+ 
+    
     // Attributs
-        private final int maxLife;
-        protected int life;
-        private int dammage;
-        private final ICoord position;
-        private IMovement movement;
-        private Actor creator;
+    
+    private final int maxLife;
+    private int life;
+    private int dammage;
+    private final ICoord position;
+    private IMovement movement;
+    private Actor creator;
+        
         
     // Constructeur
     
@@ -32,17 +38,27 @@ public abstract class Projectile extends Obj implements IProjectile {
         life = hp;
         dammage = dmg;
         
+        // On centre le projectile.
         pos = new PolarCoord(pos.getCol() - getWeight() / 2,
                         pos.getRow() + getHeight() / 2,
                         pos.getAngle(), pos.getR());
 
         position = pos;
         movement = mov;
-        IProjectile.allProjectiles().add(this);
+        ALL_PROJECTILES.add(this);
         creator = creat;
     }
     
+    
     // Requête
+    
+    /**
+     * Renvoie l'ensemble des projectiles créés et encore effectif
+     * sous forme de liste.
+     */
+    public static List getAllProjectiles() {
+        return ALL_PROJECTILES;
+    }
     
     public int getMaxLife() {
         return maxLife;
@@ -72,7 +88,8 @@ public abstract class Projectile extends Obj implements IProjectile {
         return creator;
     }
    
-    // Commande
+    
+    // Methode
     
     public void setPosition(int x, int y) {
         if (!isAlive()) {
@@ -95,6 +112,10 @@ public abstract class Projectile extends Obj implements IProjectile {
         movement = m;
     }
     
+    public void setLife(int p) {
+        life = p;
+    }
+        
     public void push() {
         if (!isAlive()) {
             throw new AssertionError();
@@ -111,16 +132,9 @@ public abstract class Projectile extends Obj implements IProjectile {
     }
     
     public void kill() {
-        IProjectile.allProjectiles().remove(this);
-        Nier.Game.getFenetre().removeObj(this);
+        ALL_PROJECTILES.remove(this);
+        nier.Game.FENETRE.removeObj(this);
     }
     
-    /**
-     * Renvoie true si le projectile peut être détruit par le joueur,
-     * false sinon.
-     * 
-     * @pre
-     *      isAlive()
-     */
     public abstract boolean canBeDestroyed();
 }

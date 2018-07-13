@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=AggressiveGenerator
+comment0.text=\r\n\ Generateur\ tirant\ uniquement\ vers\ le\ joueur\ et\ se\ rapproche\ de\ lui\r\n\ en\ permanence.\r\n
+comment1.params=pos\ mov\ inter\ speedProject
+comment1.target=AggressiveGenerator(nier.deplacement.PolarCoord,\ nier.deplacement.PolarMovement,\ int,\ int)
+comment2.params=
+comment2.target=java.util.List\ getAllAggressiveGenerator()
+comment3.params=
+comment3.target=void\ generate()
+comment3.text=\r\n\ Tir\ un\ projectile\ en\ direction\ du\ joueur1.\r\n
+comment4.params=
+comment4.target=void\ kill()
+comment5.params=
+comment5.target=void\ push()
+comment5.text=\r\n\ \u00E9tend\ push\ de\ mani\u00E9re\ \u00E0\ mettre\ \u00E0\ jour\ le\ mouvement\ de\ this\r\n\ en\ fonction\ de\ la\ position\ du\ joueur1.\r\n
+numComments=6

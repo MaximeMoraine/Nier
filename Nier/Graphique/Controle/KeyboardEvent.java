@@ -1,4 +1,4 @@
-package Nier.Graphique.Controle;
+package nier.graphique.controle;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
@@ -12,6 +12,7 @@ import java.util.Set;
 public class KeyboardEvent extends KeyAdapter {
     
     private Set touchePressed = new HashSet();
+    private boolean shiftPressed = false;
     
     // REQUETE
     
@@ -19,24 +20,36 @@ public class KeyboardEvent extends KeyAdapter {
         return touchePressed;
     }
     
+    public boolean getShiftPressed() {
+        return shiftPressed;
+    }
+    
     // EVENT
     
     @Override
-    public void keyPressed(KeyEvent e) {
-        // rien
-    }
-    
-    @Override
     public void keyReleased(KeyEvent e) {
-        touchePressed.remove(e.getKeyChar());
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+            shiftPressed = false;
+            return;
+        }
+        
+        char c = Character.toLowerCase(e.getKeyChar());
+        touchePressed.remove(c);
+        
     }
  
-    public void keyTyped(KeyEvent e) {
-        // TODO: METTRE EN LISTE
-        if (e.getKeyChar() == 'z' || e.getKeyChar() == 'q'
-                || e.getKeyChar() == 's' || e.getKeyChar() == 'd') {
-                    
-            touchePressed.add(e.getKeyChar());
+    @Override
+    public void keyPressed(KeyEvent e) {
+        
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+            shiftPressed = true;
+            return;
         }
+        
+        char c = Character.toLowerCase(e.getKeyChar());
+        if (c == 'z' || c == 'q' || c == 's' || c == 'd') {
+            touchePressed.add(c);
+        }
+       
     }
 }

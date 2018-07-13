@@ -1,8 +1,13 @@
-package Nier.Graphique;
+package nier.graphique;
 
 import javax.swing.JFrame;
 import java.awt.Graphics;
-import Nier.Objet.Obj;
+import nier.objet.Obj;
+import nier.deplacement.ICoord;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import nier.graphique.actionListener.playGame;
 
 /**
  * Gère l'interface du jeu.
@@ -16,6 +21,7 @@ public class Graphique {
     private final JFrame fenetre;
     private final Graphics graph;
     private final PrintPanel pan;
+    private final JButton playButton;
     
     // CONSTRUCTEUR
     
@@ -25,6 +31,8 @@ public class Graphique {
         fenetre.setResizable(false);
         
         pan = new PrintPanel();
+        playButton = new JButton("Play");
+        playButton.addActionListener(new playGame());
                 
         //On prévient notre JFrame que notre JPanel sera son content pane
         fenetre.setContentPane(pan);
@@ -37,6 +45,7 @@ public class Graphique {
     public PrintPanel getPan() {
         return pan;
     }
+    
     // METHODE
     
     /**
@@ -74,11 +83,19 @@ public class Graphique {
     }
     
     /**
-     * affiche l'objet envoyé en paramètre à sa position courante
-     * selon sa propre définition.
-     * 
-     * @pre
-     *      obj != null
+     * Lance le menu du jeu
+     */
+    public void startMenu() {
+        setTitle("Nier Protomata");
+        setSize(ICoord.LAST_COL + ICoord.ADD_SIZE,
+        ICoord.LAST_ROW + ICoord.ADD_SIZE);
+        
+        setButton();
+    }
+                       
+    
+    /**
+     * Actualise la fenêtre.
      */
     public void print() {
         
@@ -111,5 +128,19 @@ public class Graphique {
         }
         
         pan.removeObj(obj); 
+    }
+    
+    /**
+     * Supprime tous les boutons de la fenetre d'affichage.
+     */
+    public void removeButton() {
+        pan.remove(playButton);
+    }
+    
+    /**
+     * Affiche tous les boutons sur la fenetre d'affichage.
+     */
+    public void setButton() {
+        pan.add(playButton);
     }
 }

@@ -1,20 +1,29 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.ICoord;
-import Nier.Deplacement.IMovement;
+import nier.deplacement.ICoord;
+import nier.deplacement.IMovement;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Implèmente l'interface IActor.
  */
 public abstract class Actor extends Obj implements IActor {
-    // ATTRIBUTS
+    
+    // Constante
+    
+    public static final List ALL_ACTOR = new ArrayList();
+    
+    
+    // Attributs
+    
         private final int maxLife;
         private int life;
-        private final ICoord position;
+        private ICoord position;
         private IMovement movement;
-        private int speed;
         
-    // CONSTRUCTEUR
+        
+    // Constructeur
     
     protected Actor(ICoord pos, IMovement mov, int hp) {
         if (pos == null || mov == null
@@ -26,9 +35,11 @@ public abstract class Actor extends Obj implements IActor {
         life = hp;
         position = pos;
         movement = mov;
+        ALL_ACTOR.add(this);
     }
     
-    // REQUÊTES
+    
+    // Requêtes
     
     public int getMaxLife() {
         return maxLife;
@@ -50,14 +61,13 @@ public abstract class Actor extends Obj implements IActor {
         return getLife() > 0;
     }
     
-    // METHODE
+    public static List getAllActor() {
+        return ALL_ACTOR;
+    }
     
-    /**
-     * @pre
-     *      l >= 0
-     * @post
-     *      getLife() == l
-     */
+    
+    // Methode
+    
     public void setLife(int l) {
         if (life < 0) {
             throw new AssertionError();
@@ -67,10 +77,23 @@ public abstract class Actor extends Obj implements IActor {
     }
     
     public void setMovement(IMovement m) {
-        if (m == null || !isAlive()) {
+        if (m == null) {
             throw new AssertionError();
         }
         
         movement = m;
+    }
+    
+    public void setPosition(ICoord pos) {
+        if (pos == null) {
+            throw new AssertionError();
+        }
+        
+        position = pos;
+    }
+    
+    public void kill() {
+        ALL_ACTOR.remove(this);
+        nier.Game.FENETRE.removeObj(this);
     }
 }

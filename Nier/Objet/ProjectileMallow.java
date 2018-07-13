@@ -1,30 +1,29 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.ICoord;
-import Nier.Deplacement.PolarCoord;
-import Nier.Deplacement.IMovement;
-
-import java.util.Set;
-import java.util.HashSet;
+import nier.constante.Constante;
+import nier.deplacement.PolarCoord;
+import nier.deplacement.IMovement;
 
 /**
  * Projectile mauve, non détruisable par le joueur.
  */
 public class ProjectileMallow extends EnnemyProject {
    
-    // CONSTANTES
+    // Constantes
     
-        private static final int FORM = Obj.CIRCLE;
+        private static final int FORM = Constante.CIRCLE;
         private static final int WEIGHT = 18;
         private static final int HEIGHT = 18;
         
-    // CONSTRUCTEUR
+        
+    // Constructeur
     
     public ProjectileMallow(PolarCoord pos, IMovement mov, Actor creat) {
         super(pos, mov, 1, 1, creat);
     }
     
-    // REQUETE
+    
+    // Requêtes
 
     public int getForm() {
         return FORM;

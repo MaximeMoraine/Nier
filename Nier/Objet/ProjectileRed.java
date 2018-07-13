@@ -1,27 +1,26 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.PolarCoord;
-import Nier.Deplacement.IMovement;
+import nier.deplacement.PolarCoord;
+import nier.deplacement.IMovement;
+import nier.constante.Constante;
+import java.util.List;
+import java.util.ArrayList;
 
-import java.util.Set;
-import java.util.HashSet;
-
-import java.util.Iterator;
 
 /**
  * Projectile rouge, détruisable par le joueur.
  */
 public class ProjectileRed extends EnnemyProject {
    
-    // CONSTANTES
+    // Constante
     
-        private static final int FORM = Obj.CIRCLE;
+        private static final int FORM = Constante.CIRCLE;
         private static final int WEIGHT = 22;
         private static final int HEIGHT = 22;
+        public static final List ALL_PROJECTILE_RED = new ArrayList();
         
-        public static Set ALL_PROJECTILE_RED = new HashSet();
         
-    // CONSTRUCTEUR
+    // Constructeur
     
     public ProjectileRed(PolarCoord pos, IMovement mov, Actor creat) {
         super(pos, mov, 1, 1, creat);
@@ -29,9 +28,10 @@ public class ProjectileRed extends EnnemyProject {
         ALL_PROJECTILE_RED.add(this);
     }
     
-    // REQUETE
     
-    public Set getAllProjectileRed() {
+    // Requêtes
+    
+    public static List getAllProjectileRed() {
         return ALL_PROJECTILE_RED;
     }
 
@@ -54,5 +54,16 @@ public class ProjectileRed extends EnnemyProject {
         
         return true;
     }
-        
+    
+    
+    // Methode
+    
+    /**
+     * étend kill de Projectile afin de supprimer se projectile de
+     * ALL_PROJECTILE_RED.
+     */
+    public void kill() {
+        super.kill();
+        ALL_PROJECTILE_RED.remove(this);
+    }
 }

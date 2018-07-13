@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Generator
+comment0.text=\r\n\ Classe\ h\u00E9riti\u00E9re\ de\ Actor,\ impl\u00E9mentant\r\n\ les\ g\u00E9n\u00E9rateur\ (g\u00E9n\u00E8re\ des\ projectiles).\r\n
+comment1.params=pos\ mov\ inter\ speedProject1
+comment1.target=Generator(nier.deplacement.ICoord,\ nier.deplacement.IMovement,\ int,\ int)
+comment1.text=\r\n\ L'interval\ (inter)\ d\u00E9finit\ au\ bout\ de\ combien\ de\ tir,\ le\ g\u00E9n\u00E8rateur\r\n\ changera\ de\ couleur.\r\n\ \r\n\ inter\ \=\=\ 0\ ->\ Red\r\n\ inter\ \=\=\ -1\ ->\ Mallow\r\n\ else\ swith\ between\ Red\ and\ Mallow\r\n
+comment10.params=
+comment10.target=void\ kill()
+comment2.params=
+comment2.target=int\ getForm()
+comment3.params=
+comment3.target=int\ getWeight()
+comment4.params=
+comment4.target=int\ getHeight()
+comment5.params=
+comment5.target=int\ getInterval()
+comment6.params=
+comment6.target=java.util.List\ getAllGenerator()
+comment7.params=
+comment7.target=int\ getSpeedProject()
+comment8.params=
+comment8.target=void\ generate()
+comment8.text=\r\n\ G\u00E9n\u00E9re\ des\ projectiles\ et\ change\ de\ couleur\ selon\ l'interval\r\n\ d\u00E9finit\ lors\ de\ l'appel\ au\ constructeur.\r\n
+comment9.params=
+comment9.target=void\ push()
+numComments=11

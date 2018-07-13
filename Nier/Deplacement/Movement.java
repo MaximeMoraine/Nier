@@ -1,4 +1,4 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
 /**
  * Implèmente en partie l'interface IMovement

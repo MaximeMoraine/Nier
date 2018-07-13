@@ -1,7 +1,7 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.ICoord;
-import Nier.Deplacement.IMovement;
+import nier.deplacement.ICoord;
+import nier.deplacement.IMovement;
 
 /**
  * Interface définissant les propriétés des acteurs du jeu.
@@ -29,6 +29,7 @@ import Nier.Deplacement.IMovement;
  */
 
 public interface IActor {
+    
     // Requetes
     
     /**
@@ -55,4 +56,31 @@ public interface IActor {
      * Renvoie si l'acteur est en vie ou non.
      */
     boolean isAlive();
+    
+    
+    // Methode
+    
+     /**
+     * @pre
+     *      l >= 0
+     * @post
+     *      getLife() == l
+     */
+    void setLife(int l);
+    
+    /**
+     * @pre
+     *      m != null
+     * @post
+     *      getMovement() == m
+     */
+    void setMovement(IMovement m);
+    
+    /**
+     * @pre
+     *      pos != null
+     * @post
+     *      getPosition() == pos
+     */
+    void setPosition(ICoord pos);
 }

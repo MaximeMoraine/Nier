@@ -1,6 +1,4 @@
-package Nier.Deplacement;
-
-import Nier.Exception.OutOfAreaException;
+package nier.deplacement;
 
 /**
  * Classe gérant les coordonnées polair.
@@ -31,14 +29,14 @@ public class PolarCoord extends Coord {
     
     // CONSTRUCTEUR
     
-                      //start
-    public PolarCoord(int x, int y, double angle_, int r_) {
+    // Constructeur coordonnée polaire
+    public PolarCoord(int x, int y, double angle1, int r1) {
         super(x, y);
         
-        r = r_;
-        angle = angle_;
+        r = r1;
+        angle = angle1;
         firstCoord[0] = getCol();
-        firstCoord[1] =getRow();
+        firstCoord[1] = getRow();
     }
     
     // Requete
@@ -59,21 +57,23 @@ public class PolarCoord extends Coord {
     // METHODE
     
     /**
-     * Calcul la colonne associé au coordonnée polair.
+     * Calcul la colonne associé à la coordonnée polair.
      */
     public int searchCol() {
-        return firstCoord[0] + (int) Math.ceil(getR() * Math.cos(Math.toRadians(getAngle())));
+        return firstCoord[0] + (int) Math.ceil(getR() 
+                * Math.cos(Math.toRadians(getAngle())));
     }
     
     /**
-     * Calcul la ligne associée au coordonnée polair.
+     * Calcul la ligne associée à la coordonnée polair.
      */
     public int searchRow() {
-        return firstCoord[1] + (int) Math.ceil(getR() * Math.sin(Math.toRadians(getAngle())));
+        return firstCoord[1] + (int) Math.ceil(getR() 
+                * Math.sin(Math.toRadians(getAngle())));
     }
     
-    public void setR(int r_) {
-        r = r_;
+    public void setR(int r1) {
+        r = r1;
     }
     
 }

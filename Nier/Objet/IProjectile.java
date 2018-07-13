@@ -1,9 +1,7 @@
-package Nier.Objet;
+package nier.objet;
 
-import Nier.Deplacement.ICoord;
-import Nier.Deplacement.IMovement;
-import java.util.HashSet;
-import java.util.Set;
+import nier.deplacement.ICoord;
+import nier.deplacement.IMovement;
 
 /**
  * Permet la création de projectile permettant ainsi d'attaquer
@@ -38,9 +36,6 @@ import java.util.Set;
  */
 
 public interface IProjectile {
-    // VARIABLE STATIC
-    
-    Set ALL_PROJECTILES = new HashSet();
     
     // Requetes
     
@@ -75,14 +70,12 @@ public interface IProjectile {
     boolean isAlive();
     
     /**
-     * Renvoie l'ensemble des projectiles créés et encore effectif
-     * sous forme de liste.
+     * Renvoie l'acteur créant se projectile.
      */
-    static Set allProjectiles() {
-        return ALL_PROJECTILES;
-    }
+    Actor getCreator();
     
-    // Commandes
+    
+    // Méthode
     
     /**
      * Change la position du projectile selon celle envoyé en paramètre.
@@ -136,10 +129,25 @@ public interface IProjectile {
      * @post
      *      getPosition().getCol() == getMovement().getCol()
      *      getPostion().getRow() == getMovement().getRow()
-     *      ( après avoir appelé getMovement().newtCoord(getPosition()) )
+     *      ( après avoir appelé getMovement().newCoord(getPosition()) )
      *      
      *      Si il y a une OutOfAreaException, le projectile meurt.
      */
     void push();
+    
+    /**
+     * @post
+     *      getLife() == p
+     */
+    void setLife(int p);
+    
+    /**
+     * Renvoie true si le projectile peut être détruit par le camps adverse,
+     * false sinon.
+     * 
+     * @pre
+     *      isAlive()
+     */
+    boolean canBeDestroyed();
     
 }

@@ -1,4 +1,4 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
 /**
  * Objet gérant les mouvements des objets permettant ainsi de calculer

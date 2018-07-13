@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=KeyboardEvent
+comment0.text=\r\n\ G\u00E9re\ les\ \u00E9v\u00E9nement\ clavier\ en\ detectant\ les\ touches\ entr\u00E9es.\r\n
+comment1.params=
+comment1.target=java.util.Set\ getTouchePressed()
+comment2.params=
+comment2.target=boolean\ getShiftPressed()
+comment3.params=e
+comment3.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment4.params=e
+comment4.target=void\ keyPressed(java.awt.event.KeyEvent)
+numComments=5

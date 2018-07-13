@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=ProjectileRed
+comment0.text=\r\n\ Projectile\ rouge,\ d\u00E9truisable\ par\ le\ joueur.\r\n
+comment1.params=pos\ mov\ creat
+comment1.target=ProjectileRed(nier.deplacement.PolarCoord,\ nier.deplacement.IMovement,\ Actor)
+comment2.params=
+comment2.target=java.util.List\ getAllProjectileRed()
+comment3.params=
+comment3.target=int\ getForm()
+comment4.params=
+comment4.target=int\ getWeight()
+comment5.params=
+comment5.target=int\ getHeight()
+comment6.params=
+comment6.target=boolean\ canBeDestroyed()
+comment7.params=
+comment7.target=void\ kill()
+comment7.text=\r\n\ \u00E9tend\ kill\ de\ Projectile\ afin\ de\ supprimer\ se\ projectile\ de\r\n\ ALL_PROJECTILE_RED.\r\n
+numComments=8

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=playGame
+comment0.text=\r\n\ Lance\ la\ partie\ lorsque\ l'event\ est\ d\u00E9clencher\r\n
+comment1.params=arg0
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment1.text=\r\n\ On\ lance\ le\ jeu\ et\ on\ reset\ la\ fenetre\ (button\ +\ ennemi)\r\n
+numComments=2

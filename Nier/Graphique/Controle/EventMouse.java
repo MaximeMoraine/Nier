@@ -1,12 +1,12 @@
-package Nier.Graphique.Controle;
+package nier.graphique.controle;
 
-import Nier.Exception.OutOfAreaException;
+import nier.exception.OutOfAreaException;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import Nier.Deplacement.ICoord;
-import Nier.Deplacement.Coord;
+import nier.deplacement.ICoord;
+import nier.deplacement.Coord;
 
 /**
  * Gére les événements souris.
@@ -14,7 +14,6 @@ import Nier.Deplacement.Coord;
 public class EventMouse extends MouseAdapter {
     
     private final ICoord mouseCoord = new Coord(0, 0);
-    private boolean mousePressed = false;
     
     // REQUETE
     
@@ -22,36 +21,22 @@ public class EventMouse extends MouseAdapter {
         return mouseCoord;
     }
     
-    public boolean mousePressed() {
-        return mousePressed;
-    }
-    
     // EVENT
-    
-    @Override
-    public void mousePressed(MouseEvent e) {
-        mousePressed = true;
-    }
-    
-    public void mouseReleased(MouseEvent e) {
-        mousePressed = false;
-    }   
     
     @Override
     public void mouseMoved(MouseEvent e) {
         
         try {
-            mouseCoord.setCol(e.getX() - Nier.Objet.ProjectilePlayer.WEIGHT);
+            mouseCoord.setCol(e.getX() - nier.objet.ProjectilePlayer.WEIGHT);
         } catch (OutOfAreaException ex) {
             // Si la souris sors de l'écran tant pis
         }
         
         try {
             mouseCoord.setRow(ICoord.LAST_ROW - e.getY()
-                    + Nier.Objet.ProjectilePlayer.HEIGHT);
+                    + nier.objet.ProjectilePlayer.HEIGHT);
         } catch (OutOfAreaException ex) {
             // Si la souris sors de l'écran tant pis
         }
-        
     }
 }

@@ -1,0 +1,32 @@
+#BlueJ class context
+comment0.target=Graphique
+comment0.text=\r\n\ G\u00E8re\ l'interface\ du\ jeu.\r\n\ Permet\ d'afficher\ des\ objets\ dans\ une\ fen\u00EAtre\r\n\r\n\ @author\ Maxime\ Moraine\r\n
+comment1.params=
+comment1.target=Graphique()
+comment10.params=
+comment10.target=void\ setButton()
+comment10.text=\r\n\ Affiche\ tous\ les\ boutons\ sur\ la\ fenetre\ d'affichage.\r\n
+comment2.params=
+comment2.target=PrintPanel\ getPan()
+comment3.params=n
+comment3.target=void\ setTitle(java.lang.String)
+comment3.text=\r\n\ Change\ le\ titre\ de\ la\ fen\u00EAtre.\r\n\ \r\n\ @pre\ \r\n\ \ \ \ \ \ \ n\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ \ \ titre\ \=\=\ n\r\n
+comment4.params=x\ y
+comment4.target=void\ setSize(int,\ int)
+comment4.text=\r\n\ Change\ la\ taille\ de\ la\ fenetre.\r\n\ \r\n\ @pre\r\n\ \ \ \ \ \ x\ >\=\ 0\r\n\ \ \ \ \ \ y\ >\=\ 0\r\n\ @post\r\n\ \ \ \ \ \ largeur\ \=\ x\ (en\ px)\r\n\ \ \ \ \ \ hauteur\ \=\ y\ (en\ px)\r\n
+comment5.params=
+comment5.target=void\ startMenu()
+comment5.text=\r\n\ Lance\ le\ menu\ du\ jeu\r\n
+comment6.params=
+comment6.target=void\ print()
+comment6.text=\r\n\ Actualise\ la\ fen\u00EAtre.\r\n
+comment7.params=obj
+comment7.target=void\ addObj(nier.objet.Obj)
+comment7.text=\r\n\ Ajoute\ l'objet\ obj\ \u00E0\ la\ liste\ des\ objets\ \u00E0\ afficher.\r\n\ \r\n\ \ @pre\r\n\ \ \ \ \ \ obj\ \!\=\ null\r\n
+comment8.params=obj
+comment8.target=void\ removeObj(nier.objet.Obj)
+comment8.text=\r\n\ Supprime\ l'objet\ obj\ \u00E0\ la\ liste\ des\ objets\ \u00E0\ afficher.\r\n\ \r\n\ \ @pre\r\n\ \ \ \ \ \ obj\ \!\=\ null\r\n
+comment9.params=
+comment9.target=void\ removeButton()
+comment9.text=\r\n\ Supprime\ tous\ les\ boutons\ de\ la\ fenetre\ d'affichage.\r\n
+numComments=11

@@ -1,4 +1,4 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
 /**
  * Mouvement des joueurs.
@@ -38,10 +38,10 @@ public class PlayerMovement extends Movement {
             pushY(p);
         }
         if (q) {
-            push_X(p);
+            pushX2(p);
         }
         if (s) {
-            push_Y(p);
+            pushY2(p);
         }
         if (d) {
             pushX(p);
@@ -67,14 +67,14 @@ public class PlayerMovement extends Movement {
     /**
      * Décrémente la position en X du joueur.
      */
-    private void push_X(ICoord x) {
+    private void pushX2(ICoord x) {
         resX -= X_MOVEMENT;
     }
     
     /**
      * Décrémente la position en Y du joueur.
      */
-    private void push_Y(ICoord p) {
+    private void pushY2(ICoord p) {
         resY -= Y_MOVEMENT;
     }
     

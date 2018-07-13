@@ -1,4 +1,4 @@
-package Nier.Deplacement;
+package nier.deplacement;
 
 /**
  * Calcul la prochaine position selon un mouvement linéaire.
